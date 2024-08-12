@@ -13,16 +13,26 @@
         <h3 class="text-white text-center">Welcome to CRUD application</h3>
     </div>
     <div class="container">
-        <div class="row d-flex justify-content-center ">
+        <div class="row d-flex justify-content-center">
             <div class="col-md-10 justify-content-end d-flex">
-                <a href="{{route('product.index')}}" class="btn btn-dark">Back</a>
+                <a href="{{route('product.create')}}" class="btn btn-dark">Create</a>
             </div>
+            @if(Session::has('success'))
+            <div class="col-md-10 mt-4">
+                <!-- {{Session::get('success')}} -->
+                <div class="alert alert-success">
+                    {{Session::get('success')}}
+                </div>
+            </div>
+            @endif
+
+            @endif
             <div class="col-md-10">
                 <div class="card border-0 shadow-lg my-5">
                     <div class="card-header bg-dark">
-                        <h3 class="text-white">Create Product</h3>
+                        <h3 class="text-white">List of Product</h3>
                     </div>
-                    <form enctype="multipart/form-data" action="{{route('product.store')}}" method="post">
+                    <!-- <form action="{{route('product.store')}}" method="post">
                         @csrf
                         <div class="card-body">
                             <t class="mb-3">
@@ -45,7 +55,7 @@
                         <div class="mb-3">
                             <label for="" class="form-label h5">Description</label>
                             <!-- <input type="text" class="form-control form-control-lg" placeholder="Enter Product description" name="description"> -->
-                            <textarea placeholder="Enter Product description" name="description" class="form-control" cols="30" row="5">{{old('name')}}</textarea>
+                    <!-- <textarea placeholder="Enter Product description" name="description" class="form-control" cols="30" row="5">{{old('name')}}</textarea>
                         </div>
                         <div class="mb-3">
                             <label for="" class="form-label h5">Image</label>
@@ -57,10 +67,10 @@
                             </button>
                         </div>
                 </div>
-                </form>
+                </form> -->
+                </div>
             </div>
         </div>
-    </div>
     </div>
 </body>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>

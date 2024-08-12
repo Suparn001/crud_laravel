@@ -18,6 +18,8 @@ return new class extends Migration
         $table->double('price',10,2);
         $table->text('description')->nullable;
         $table->string('image')->nullable;
+        $table->timestamp('created at');
+        $table->timestamp('updated at');
     });
 }
 
